@@ -37,8 +37,10 @@ public class Emitter : MonoBehaviour {
 		//Debug.Log ("sendData");
 		try
 		{
-		    Int32 port = 7000;
+		    //Int32 port = 7000;
+			Int32 port = 8400;
 			TcpClient client = new TcpClient("localhost", port);
+			//TcpClient client = new TcpClient("192.168.43.184", port);
 			NetworkStream stream = client.GetStream();
 			while (running)
 			{
@@ -103,7 +105,7 @@ public class Emitter : MonoBehaviour {
 				obj.transform.position = new Vector3 (entityCoordsX, (float)0.6, entityCoordsZ);
 				//obj.transform.rotation = new Quaternion(entityVectorX, 0, entityVectorZ, 0);
 				//obj.transform.rotation = Quaternion.FromToRotation(new Vector3(0, 0, 0), new Vector3(entityVectorX, 0, entityVectorZ));
-				obj.transform.rotation = Quaternion.LookRotation(new Vector3(entityVectorX, 0, entityVectorZ));
+				obj.transform.rotation = Quaternion.LookRotation(new Vector3(entityVectorX, 270, entityVectorZ));
 			}
 		}
 	}
